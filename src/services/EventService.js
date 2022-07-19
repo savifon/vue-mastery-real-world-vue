@@ -1,7 +1,8 @@
 import axios from 'axios'
 
 const apiClient = axios.create({
-  baseURL: 'https://my-json-server.typicode.com/Code-Pop/Real-World_Vue-3',
+  baseURL:
+    'https://my-json-server.typicode.com/savifon/vue-mastery-real-world-vue',
   withCredentials: false,
   headers: {
     Accept: 'application/json',
@@ -15,5 +16,19 @@ export default {
   },
   getEvent(id) {
     return apiClient.get('/events/' + id)
+  },
+  postEvent(
+    event = {
+      id: 111,
+      category: 'Abc',
+      title: 'abc',
+      description: 'abc',
+      location: 'abc',
+      date: 'abc 123',
+      time: '12:00',
+      organizer: 'abc',
+    }
+  ) {
+    return apiClient.post('/events', event)
   },
 }
