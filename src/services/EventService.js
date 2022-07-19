@@ -17,18 +17,7 @@ export default {
   getEvent(id) {
     return apiClient.get('/events/' + id)
   },
-  postEvent(
-    event = {
-      id: 111,
-      category: 'Abc',
-      title: 'abc',
-      description: 'abc',
-      location: 'abc',
-      date: 'abc 123',
-      time: '12:00',
-      organizer: 'abc',
-    }
-  ) {
+  postEvent(event) {
     return apiClient.post('/events', event)
   },
 }
