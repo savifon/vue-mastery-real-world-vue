@@ -20,6 +20,11 @@ const routes = [
     name: 'About',
     component: AboutView,
   },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    redirect: { path: '/' },
+  },
 ]
 
 const router = createRouter({
